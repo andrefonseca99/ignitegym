@@ -7,8 +7,8 @@ import { HomeHeader } from '@components/HomeHeader';
 
 export function Home(){
 
-    const [ groups, setGroups ] = useState(["costa", "Biceps", "Triceps", "Ombro"]);
-    const [ groupSelected, setGroupSelected ] = useState("costa");
+    const [ groups, setGroups ] = useState(["Costas", "Biceps", "Triceps", "Ombro"]);
+    const [ groupSelected, setGroupSelected ] = useState("costas");
     const [ exercises, setExercises ] = useState(["Puxada frontal", "Remada curvada", "Remada unilateral", "Levantamento terra"]);
 
     return(
@@ -21,7 +21,7 @@ export function Home(){
                 renderItem={({item }) =>(
                     <Group
                     name={item}
-                    isActive={groupSelected === item}
+                    isActive={groupSelected.toLocaleUpperCase() === item.toLocaleUpperCase()}
                     onPress={() => setGroupSelected(item)}
                 />
                 )}
